@@ -4,6 +4,8 @@ import { getBlogs } from './api';
 import HomePage from './Components/HomePage';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Show from './Components/Show';
+import Login from './Components/Login';
+import Register from './Components/Register';
 
 class App extends Component {
     state = {
@@ -25,6 +27,8 @@ class App extends Component {
                     <Navbar />
                     <Route exact path='/blogs' render={() => <HomePage blogs={blogs} />} />
                     <Route path='/blogs/:id' component={Show} />
+                    <Route exact path='/login' component={Login} />
+                    <Route exact path='/register' component={Register} />
                 </div>
             </BrowserRouter>
         );

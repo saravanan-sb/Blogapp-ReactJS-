@@ -14,15 +14,28 @@ const Show = (props) => {
     console.log(blog[0])
 
     const newblog = blog[0] ? (
-        <div className="post">
-            <h1>{blog[0].title}</h1>
+        <div>
+            <div className='center'>
+                <div className="container">
+                    <h2>{blog[0].title}</h2>
+                </div>
+            </div>
+            <div className='center'>
+                <img src={blog[0].image} alt={blog[0].title} />
+
+            </div>
+            <div>
+                <div className="container para">
+                    <p>{blog[0].body}</p>
+                </div>
+            </div>
         </div>
     ) : (
             <div className="center">Loading.....</div>
         )
 
     return (
-        <div className='post'>
+        <div className='l12 m8 s12 post'>
             {newblog}
         </div>
     );

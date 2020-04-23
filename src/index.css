@@ -73,6 +73,28 @@ hr {
     font-size: 2em;
     padding: 5px 10px 0 0;
 }
+.post {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    align-self: center;
+}
+
+.overall {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.para {
+    font-size: 1.8rem;
+    font-weight: 200;
+    text-indent: 3rem;
+}
+
+.form {
+    width: 40%;
+}
 
 @media screen and (max-width: 994px) {
     .hero-center {
@@ -83,9 +105,13 @@ hr {
         display: flex;
         width: 100%;
     }
-
+    .form {
+        width: 80%;
+    }
    
 }
+
+
 
 @media screen and (max-width: 400px) {
     .overall {
