@@ -1,0 +1,96 @@
+body html {
+    padding: 0%;
+    margin: 0;
+}
+
+.list-content img {
+    width: 60px;
+    height: 60px;
+} 
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.list-content {
+    display: flex;
+    margin: 10% 5%;    
+}
+
+hr {
+    width: 80%;
+}
+.hero-bigcard {
+    display: flex;
+    margin: 10% 5%;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bigcard-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+}
+
+.main-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.main-list-content {
+    display: flex;
+}
+
+.main-list-image {
+    width: 250px;
+    padding-right: 10px;
+    margin: 10px;
+}
+
+.submain {
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+}
+
+.main-popular {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-popular-content {
+    display: flex;
+}
+
+.main-popular-content span{
+    font-size: 2em;
+    padding: 5px 10px 0 0;
+}
+
+@media screen and (max-width: 994px) {
+    .hero-center {
+        display: none;
+    }
+
+    .bigcard-content {
+        display: flex;
+        width: 100%;
+    }
+
+   
+}
+
+@media screen and (max-width: 400px) {
+    .overall {
+        display: flex;
+        flex-direction: column;
+        width: 125%;
+    }
+}
