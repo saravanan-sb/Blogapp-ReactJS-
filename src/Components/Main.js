@@ -2,9 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { getBlogs } from '../api';
 import { Link } from 'react-router-dom';
 
-const Main = ({ blogs }) => {
+const Main = () => {
 
     const [popularBLog, setpopularBLog] = useState([]);
+    const [blogs, setblogs] = useState([]);
+
+    useEffect(() => {
+        const blogsFetchApi = async () => {
+            const { data: { blogs } } = await getBlogs()
+            return setblogs(blogs)
+        }
+        blogsFetchApi()
+    }, [setblogs])
 
     useEffect(() => {
         const blogsFetchApi = async () => {
@@ -12,12 +21,14 @@ const Main = ({ blogs }) => {
             return setpopularBLog(blogs)
         }
         blogsFetchApi()
-    }, [setpopularBLog])
+    }, [])
+
+
 
     const listBlogs = blogs.length ? (
-        blogs.map(blog => {
+        blogs.map((blog, i) => {
             return (
-                <div className="main-list s12 m6 l6">
+                <div className="main-list s12 m6 l6" key={i}>
                     <div className="main-list-content">
                         <div className='main-list-image'>
                             <img src={blog.image} alt="" />
@@ -46,6 +57,7 @@ const Main = ({ blogs }) => {
             )
         })
     ) : (<div>Loading......</div>)
+
     return (
         <div className='container l7 s12 main'>
             <div className="submain">

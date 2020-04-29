@@ -1,38 +1,34 @@
 import React, { Component } from 'react';
-import Navbar from './Components/Navbar';
-import { getBlogs } from './api';
 import HomePage from './Components/HomePage';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import Show from './Components/Show';
 import Login from './Components/Login';
 import Register from './Components/Register';
+import New from './Components/New';
+import Navbar from './Components/Navbar';
+import { loginContext } from './contexts/loginContext';
 
 class App extends Component {
-    state = {
-        blogs: []
-    }
-
-    async componentDidMount() {
-        const { data: { blogs } } = await getBlogs();
-        this.setState({
-            blogs
-        })
-    }
-
+    static contextType = loginContext;
     render() {
-        const blogs = this.state.blogs;
+        let renderComp = Login;
+        const { token } = this.context.state;
+        if (token) {
+            renderComp = New;
+        }
         return (
-            <BrowserRouter>
-                <div className='overall'>
-                    <Navbar />
-                    <Route exact path='/blogs' render={() => <HomePage blogs={blogs} />} />
+            <div className='App'>
+                <Navbar />
+                <Switch>
+                    <Route exact strict path='/blogs' component={HomePage} />
+                    <Route exact strict path='/blogs/new' component={renderComp} />
                     <Route path='/blogs/:id' component={Show} />
-                    <Route exact path='/login' component={Login} />
-                    <Route exact path='/register' component={Register} />
-                </div>
-            </BrowserRouter>
+                    <Route exact strict path='/login' component={Login} />
+                    <Route exact strict path='/register' component={Register} />
+                </Switch>
+            </div>
         );
     }
 }
 
-export default App;
+export default withRouter(App);

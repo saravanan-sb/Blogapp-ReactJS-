@@ -80,7 +80,7 @@ hr {
     align-self: center;
 }
 
-.overall {
+.App {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -94,6 +94,13 @@ hr {
 
 .form {
     width: 40%;
+}
+
+.nav-name {
+    margin: 0;
+}
+.newUser {
+    padding-top: 10px;
 }
 
 @media screen and (max-width: 994px) {
@@ -114,7 +121,7 @@ hr {
 
 
 @media screen and (max-width: 400px) {
-    .overall {
+    .App {
         display: flex;
         flex-direction: column;
         width: 125%;
