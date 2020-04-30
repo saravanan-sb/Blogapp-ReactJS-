@@ -1,5 +1,5 @@
 import axios from 'axios';
-let url = 'http://localhost:3001';
+let url = 'https://blogappapis.herokuapp.com';
 
 export const getBlogs = async () => {
     try {
