@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getSingleBlog, userDetails, deleteBlog } from '../api';
+import { Link } from 'react-router-dom';
 
 const Show = (props) => {
     const [blog, setblog] = useState([]);
@@ -31,7 +32,7 @@ const Show = (props) => {
         blog[0] ? (
             <div>
                 <div className='center'>
-                    <div className="container">
+                    <div className="container title">
                         <h2>{blog[0].title}</h2>
                     </div>
                 </div>
@@ -45,23 +46,29 @@ const Show = (props) => {
                     </div>
                 </div>
                 <div className="fixed-action-btn">
-                    <button className="btn-floating btn-large red waves-effect">
-                        <i className="large material-icons">mode_edit</i>
-                    </button>
-                    <button className="btn-floating btn-large red waves-effect" onClick={() => handleDelete(blog[0]._id)}>
-                        <i className="large material-icons">delete</i>
-                    </button>
+                    <div className='float-btns'>
+                        <Link to={`/blogs/${blog[0]._id}/edit`} className="btn-floating btn-large red waves-effect">
+                            <i className="large material-icons">mode_edit</i>
+                        </Link>
+                    </div>
+                    <div className='float-btns'>
+                        <button className="btn-floating btn-large red waves-effect" onClick={() => handleDelete(blog[0]._id)}>
+                            <i className="large material-icons">delete</i>
+                        </button>
+                    </div>
                 </div>
 
             </div>
         ) : (
-                <div className="center">Loading.....</div>
+                <div className="progress">
+                    <div className="indeterminate" />
+                </div>
             )
     ) : (
             blog[0] ? (
                 <div>
                     <div className='center'>
-                        <div className="container">
+                        <div className="container title">
                             <h2>{blog[0].title}</h2>
                         </div>
                     </div>
@@ -76,7 +83,9 @@ const Show = (props) => {
                     </div>
                 </div>
             ) : (
-                    <div className="center">Loading.....</div>
+                    <div className="progress">
+                        <div className="indeterminate" />
+                    </div>
                 )
         )
     return (

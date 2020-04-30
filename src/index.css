@@ -76,7 +76,7 @@ hr {
 .post {
     display: flex;
     justify-content: center;
-    width: 60%;
+    width: 80%;
     align-self: center;
 }
 
@@ -87,9 +87,34 @@ hr {
 }
 
 .para {
+    width: 85%;
     font-size: 1.8rem;
     font-weight: 200;
     text-indent: 3rem;
+}
+
+.list-content img {
+    margin-right: 7px;
+}
+
+.float-btns{
+    padding-bottom: 5px;
+}
+
+@media screen and (max-width: 854px) {
+    .para {
+        width: 90%;
+        font-size: 1.2rem;
+        font-weight: 200;
+        text-indent: 3rem;
+    }
+
+    .title h2{
+        font-weight: 300;
+        font-size: 1.56rem;
+        line-height: 100%;
+        margin: 1.373333rem 0 1.424rem 0;
+    }
 }
 
 .form {
@@ -119,11 +144,18 @@ hr {
 }
 
 
-
 @media screen and (max-width: 400px) {
+    .para {
+        width: 100%;
+        font-size: 1rem;
+        font-weight: 300;
+        text-indent: 3rem;
+    }
+
     .App {
         display: flex;
         flex-direction: column;
-        width: 125%;
+        width: fit-content;
+        overflow-x: hidden;
     }
 }

@@ -61,7 +61,11 @@ const Hero = () => {
                 </div>
             </div>
         </div>
-    ) : (null)
+    ) : (
+            <div className="progress">
+                <div className="indeterminate" />
+            </div>
+        )
 
     return (
         <div>

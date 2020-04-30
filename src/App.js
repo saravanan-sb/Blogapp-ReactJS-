@@ -6,6 +6,7 @@ import Login from './Components/Login';
 import Register from './Components/Register';
 import New from './Components/New';
 import Navbar from './Components/Navbar';
+import Edit from './Components/Edit';
 import { loginContext } from './contexts/loginContext';
 
 class App extends Component {
@@ -20,9 +21,11 @@ class App extends Component {
             <div className='App'>
                 <Navbar />
                 <Switch>
+                    <Route exact strict path='/' component={HomePage} />
                     <Route exact strict path='/blogs' component={HomePage} />
                     <Route exact strict path='/blogs/new' component={renderComp} />
-                    <Route path='/blogs/:id' component={Show} />
+                    <Route exact path='/blogs/:id' component={Show} />
+                    <Route path='/blogs/:id/edit' component={Edit} />
                     <Route exact strict path='/login' component={Login} />
                     <Route exact strict path='/register' component={Register} />
                 </Switch>

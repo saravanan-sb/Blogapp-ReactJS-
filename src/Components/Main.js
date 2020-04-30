@@ -43,7 +43,11 @@ const Main = () => {
                 </div>
             )
         })
-    ) : (<div>Loading......</div>)
+    ) : (
+            <div className="progress">
+                <div className="indeterminate" />
+            </div>
+        )
 
     const popularBlogs = popularBLog.length ? (
         popularBLog.map((blog, i) => {
@@ -56,7 +60,10 @@ const Main = () => {
                 </div>
             )
         })
-    ) : (<div>Loading......</div>)
+    ) : (
+
+            null
+        )
 
     return (
         <div className='container l7 s12 main'>

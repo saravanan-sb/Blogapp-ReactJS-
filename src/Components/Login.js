@@ -64,9 +64,7 @@ class Login extends React.Component {
                     {
                         newBlogMsg ? (<p className='red-text'>Please LogIn first.!</p>) : null
                     }
-
                 </div>
-
             </div>
         );
     }
