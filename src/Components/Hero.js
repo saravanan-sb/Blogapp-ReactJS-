@@ -23,7 +23,7 @@ const Hero = () => {
 
     const allblogs = blogs.length && blogs[0] ? (
 
-        <div className="container row">
+        <div className="container row main-h6">
             <div className="col m6 s6 l4">
                 <div className='hero-bigcard'>
                     <img src={blogs[0].image} alt={blogs[0].title} />

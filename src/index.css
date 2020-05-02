@@ -80,6 +80,12 @@ hr {
     width: 80%;
     align-self: center;
 }
+.App {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+} 
 
 /* .App {
     display: flex;
@@ -144,8 +150,24 @@ hr {
    
 }
 
+.main-list-title {
+    display: flex;
+    flex-direction: column;
+}
 
 @media screen and (max-width: 400px) {
+    .main-h6 {
+        font-size: 1rem;
+    line-height: 100%;
+    }
+    .submain h2 {
+        font-size: 1.8rem;
+    }
+
+    .submain h5 {
+        font-size: 1.2rem;
+    }
+
     .para {
         width: 100%;
         font-size: 1rem;

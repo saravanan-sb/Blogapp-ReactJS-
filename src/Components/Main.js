@@ -28,17 +28,15 @@ const Main = () => {
     const listBlogs = blogs.length ? (
         blogs.map((blog, i) => {
             return (
-                <div className="main-list s12 m6 l6" key={i}>
-                    <div className="main-list-content">
-                        <div className='main-list-image'>
-                            <img src={blog.image} alt="" />
-                        </div>
-                        <div>
-                            <Link to={`/blogs/${blog._id}`}>
-                                <h5>{blog.title}</h5>
-                            </Link>
-                            <p>{blog.body.substring(0, 100)}</p>
-                        </div>
+                <div className="main-list" key={i}>
+                    <div className='main-list-image'>
+                        <img src={blog.image} alt="" />
+                    </div>
+                    <div className='main-list-title'>
+                        <Link to={`/blogs/${blog._id}`}>
+                            <h5>{blog.title}</h5>
+                        </Link>
+                        <p>{blog.body.substring(0, 100)}</p>
                     </div>
                 </div>
             )
@@ -66,8 +64,8 @@ const Main = () => {
         )
 
     return (
-        <div className='container l7 s12 main'>
-            <div className="submain s12">
+        <div className='container main'>
+            <div className="submain">
                 <h2>Latest Stories</h2>
                 {listBlogs}
             </div>
