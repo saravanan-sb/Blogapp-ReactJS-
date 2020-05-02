@@ -67,7 +67,7 @@ const Main = () => {
 
     return (
         <div className='container l7 s12 main'>
-            <div className="submain">
+            <div className="submain s12">
                 <h2>Latest Stories</h2>
                 {listBlogs}
             </div>

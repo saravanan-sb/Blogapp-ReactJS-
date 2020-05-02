@@ -51,6 +51,7 @@ hr {
 }
 
 .submain {
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -80,11 +81,11 @@ hr {
     align-self: center;
 }
 
-.App {
+/* .App {
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
+} */
 
 .para {
     width: 85%;
@@ -155,7 +156,7 @@ hr {
     .App {
         display: flex;
         flex-direction: column;
-        width: fit-content;
-        overflow-x: hidden;
-    }
+        width: 100%;
+        overflow: hidden;
+    } 
 }
